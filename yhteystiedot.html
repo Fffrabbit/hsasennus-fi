@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yhteystiedot | Hämeen Sähköasennus Oy</title>
 <meta name="description" content="Hämeen Sähköasennus Oy:n yhteystiedot Hämeenlinnassa, Padasjoella ja Lahdessa.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<meta name="theme-color" content="#1f3a5f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hämeen Sähköasennus Oy">
+<meta property="og:title" content="Yhteystiedot | Hämeen Sähköasennus Oy">
+<meta property="og:description" content="Hämeen Sähköasennus Oy:n yhteystiedot Hämeenlinnassa, Padasjoella ja Lahdessa.">
+<meta property="og:image" content="https://hsasennus.fi/assets/img/hs-asennus-logo.jpg">
+<meta property="og:url" content="https://hsasennus.fi/yhteystiedot.html">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,6 +27,7 @@
 <header class="site">
   <div class="site-header-inner">
     <a class="wordmark" href="index.html"><img src="assets/img/hs-asennus-logo.jpg" height="60" alt="Hämeen Sähköasennus Oy"></a>
+    <div class="nav-group">
     <nav class="site-nav" aria-label="Päävalikko">
       <ul>
         <li><a href="index.html">Etusivu</a></li>
@@ -23,6 +37,8 @@
         <li><a href="yleista.html">Yleistä</a></li>
       </ul>
     </nav>
+    <a class="btn-cta" href="yhteystiedot.html#tarjous">Pyydä tarjous</a>
+    </div>
   </div>
 </header>
 
@@ -83,12 +99,58 @@
     </div>
   </section>
 
-  <div class="wrap">
-  <section class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26660.49711568671!2d24.415361899556544!3d61.01994569168106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e5e73fe402cdb%3A0x15e03da2a865e2be!2zSMOkbWVlbiBTw6Roa8O2YXNlbm51cyBPeQ!5e1!3m2!1sen!2sfi!4v1789115148345!5m2!1sen!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <section>
+    <div class="wrap">
+      <h2>Sijainti</h2>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26660.49711568671!2d24.415361899556544!3d61.01994569168106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e5e73fe402cdb%3A0x15e03da2a865e2be!2zSMOkbWVlbiBTw6Roa8O2YXNlbm51cyBPeQ!5e1!3m2!1sen!2sfi!4v1789115148345!5m2!1sen!2sfi" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Hämeen Sähköasennus Oy kartalla"></iframe>
+      </div>
+    </div>
   </section>
-  </div>
-  
+
+  <section id="tarjous" class="panel">
+    <div class="wrap">
+      <h2>Ota yhteyttä / pyydä tarjous</h2>
+      <p style="max-width:42em; color:var(--muted);">Täytä lomake, niin olemme sinuun yhteydessä. Voit myös soittaa tai lähettää sähköpostia suoraan yllä oleville yhteyshenkilöille.</p>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="row2">
+          <div>
+            <label for="f-nimi">Nimi</label>
+            <input type="text" id="f-nimi" name="nimi" required>
+          </div>
+          <div>
+            <label for="f-puhelin">Puhelin</label>
+            <input type="tel" id="f-puhelin" name="puhelin">
+          </div>
+        </div>
+        <div>
+          <label for="f-email">Sähköposti</label>
+          <input type="email" id="f-email" name="email" required>
+        </div>
+        <div>
+          <label for="f-palvelu">Mistä on kyse?</label>
+          <select id="f-palvelu" name="palvelu">
+            <option>Tarjouspyyntö</option>
+            <option>Sähköurakointi</option>
+            <option>Sähköasennukset</option>
+            <option>Sähkösuunnittelu</option>
+            <option>Tietoverkkoasennukset</option>
+            <option>Valokuitutyöt</option>
+            <option>Palohälytysjärjestelmät ja turvavalaistus</option>
+            <option>Huolto ja ylläpito</option>
+            <option>Muu asia</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-viesti">Viesti</label>
+          <textarea id="f-viesti" name="viesti" rows="5" required></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn-cta">Lähetä</button>
+        <p class="form-note">Lomake vaatii vielä käyttöönoton — ks. README.md kohta "Yhteydenottolomakkeen käyttöönotto".</p>
+      </form>
+    </div>
+  </section>
 </main>
 
 <footer class="site">
