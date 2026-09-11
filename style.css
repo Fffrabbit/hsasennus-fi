@@ -77,7 +77,7 @@ header.site {
   text-decoration: none;
 }
 .wordmark img {
-  height: 44px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -88,6 +88,12 @@ nav.site-nav ul {
   gap: 1.6rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+}
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
   flex-wrap: wrap;
 }
 nav.site-nav a {
@@ -101,6 +107,102 @@ nav.site-nav a:hover,
 nav.site-nav a[aria-current="page"] {
   border-bottom-color: var(--amber);
 }
+
+.btn-cta {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--navy-dark);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+}
+.btn-cta:hover { background: var(--amber-dark); }
+
+/* split hero with image */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 46rem) {
+  .hero-split { grid-template-columns: 6fr 5fr; }
+}
+.hero-split img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 4px solid var(--amber);
+}
+
+/* responsive map embed */
+.map-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* contact / quote form */
+form.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 34em;
+}
+form.contact-form .row2 {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 34rem) {
+  form.contact-form .row2 { grid-template-columns: 1fr 1fr; }
+}
+form.contact-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 0.3rem;
+}
+form.contact-form input,
+form.contact-form select,
+form.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+}
+form.contact-form input:focus,
+form.contact-form select:focus,
+form.contact-form textarea:focus {
+  outline: 3px solid var(--amber);
+  outline-offset: 1px;
+  border-color: var(--navy);
+}
+form.contact-form button {
+  justify-self: start;
+}
+.form-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.hp-field { position: absolute; left: -9999px; }
 
 /* hero */
 .hero {
