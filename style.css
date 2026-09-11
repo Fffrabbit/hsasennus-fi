@@ -1,0 +1,217 @@
+/* Hämeen Sähköasennus Oy — static site
+   Palette drawn from the original hsasennus.fi styling (navy + amber). */
+
+:root {
+  --ink: #1c2128;
+  --navy: #1f3a5f;
+  --navy-dark: #16283f;
+  --amber: #e8a93c;
+  --amber-dark: #c98a1f;
+  --paper: #ffffff;
+  --panel: #f3f6f9;
+  --line: #dbe2e9;
+  --muted: #5b6672;
+  --max: 68rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Archivo", "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--navy-dark);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+h3 { font-size: 1.15rem; }
+
+p { margin: 0 0 1em; max-width: 40em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--navy); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* top accent bar */
+.accent-bar { height: 5px; background: var(--amber); }
+
+/* header */
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy-dark);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.wordmark span { color: var(--amber-dark); }
+
+nav.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+nav.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+nav.site-nav a:hover,
+nav.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--amber);
+}
+
+/* hero */
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.hero .lede {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 38em;
+}
+.hero .rule {
+  width: 3.5rem;
+  height: 4px;
+  background: var(--amber);
+  margin: 1.1rem 0 1.4rem;
+}
+
+section { padding: 3rem 0; }
+section + section { border-top: 1px solid var(--line); }
+.panel { background: var(--panel); }
+
+/* service / definition list */
+dl.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 46rem) {
+  dl.services { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
+}
+dl.services > div {
+  border-left: 3px solid var(--amber);
+  padding-left: 1rem;
+}
+dl.services dt {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 0.3rem;
+}
+dl.services dd { margin: 0; color: var(--muted); }
+
+/* why-choose-us list */
+.reasons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+.reasons li {
+  padding-left: 1.6rem;
+  position: relative;
+}
+.reasons li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.6em;
+  height: 0.6em;
+  background: var(--amber);
+}
+
+/* office / contact cards */
+.offices {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 46rem) {
+  .offices { grid-template-columns: repeat(3, 1fr); }
+}
+.office h3 { margin-bottom: 0.2rem; }
+.office .address { color: var(--muted); margin-bottom: 0.8rem; }
+.office dl { margin: 0; }
+.office dl div { padding: 0.35rem 0; border-top: 1px solid var(--line); }
+.office dl div:first-child { border-top: none; }
+.office dt { font-weight: 600; font-size: 0.92rem; }
+.office dd { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+table.billing {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 34em;
+}
+table.billing th, table.billing td {
+  text-align: left;
+  padding: 0.5rem 0.8rem 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* footer */
+footer.site {
+  background: var(--navy-dark);
+  color: #cfd8e3;
+  padding: 2.5rem 0;
+  margin-top: 2rem;
+}
+footer.site a { color: #fff; }
+footer.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  align-items: baseline;
+  font-size: 0.92rem;
+}
+footer.site .company { font-weight: 700; color: #fff; margin-right: 0.4rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
