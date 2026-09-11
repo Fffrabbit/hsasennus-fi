@@ -72,14 +72,15 @@ header.site {
 }
 
 .wordmark {
-  font-family: "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
-.wordmark span { color: var(--amber-dark); }
+.wordmark img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
 nav.site-nav ul {
   list-style: none;
@@ -194,6 +195,44 @@ table.billing th, table.billing td {
   padding: 0.5rem 0.8rem 0.5rem 0;
   border-bottom: 1px solid var(--line);
 }
+
+/* reference cases */
+.cases {
+  display: grid;
+  gap: 3rem;
+}
+.case {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+@media (min-width: 46rem) {
+  .case { grid-template-columns: 5fr 7fr; }
+  .case:nth-child(even) .case-media { order: 2; }
+}
+.case-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.case-media .extra {
+  margin-top: 0.6rem;
+}
+.case-media figcaption {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+.case-body .rule {
+  width: 2.5rem;
+  height: 3px;
+  background: var(--amber);
+  margin: 0.6rem 0 0.9rem;
+}
+.case-body p { color: var(--muted); max-width: 42em; }
 
 /* footer */
 footer.site {
